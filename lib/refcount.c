@@ -244,6 +244,7 @@ EXPORT_SYMBOL(refcount_dec_checked);
  *
  * Return: true if the resulting refcount is 0, false otherwise
  */
+# if 0
 bool refcount_dec_if_one(refcount_t *r)
 {
 	int val = 1;
@@ -347,6 +348,7 @@ bool refcount_dec_and_lock(refcount_t *r, spinlock_t *lock)
 	return true;
 }
 EXPORT_SYMBOL(refcount_dec_and_lock);
+# endif
 
 /**
  * refcount_dec_and_lock_irqsave - return holding spinlock with disabled
